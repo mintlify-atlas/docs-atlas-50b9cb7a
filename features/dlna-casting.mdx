@@ -1,0 +1,389 @@
+---
+title: DLNA/UPnP Casting
+description: Stream music to Smart TVs, network speakers, and home theater systems using DLNA/UPnP
+---
+
+Musika supports DLNA/UPnP casting, allowing you to stream your music to compatible devices on your local network. Play your favorite tracks through Smart TVs, network speakers, home theater systems, and more.
+
+## What is DLNA/UPnP?
+
+DLNA (Digital Living Network Alliance) and UPnP (Universal Plug and Play) are industry-standard protocols that enable devices to discover and stream media to each other over your local network.
+
+### Compatible Devices
+
+<CardGroup cols={2}>
+  <Card title="Smart TVs" icon="tv">
+    Samsung, LG, Sony, and other network-enabled televisions
+  </Card>
+  <Card title="Network Speakers" icon="speaker">
+    Sonos, Denon HEOS, Bose SoundTouch, and similar systems
+  </Card>
+  <Card title="AV Receivers" icon="tower-broadcast">
+    Yamaha, Onkyo, Pioneer, and other home theater receivers
+  </Card>
+  <Card title="Media Players" icon="film">
+    Roku, Amazon Fire TV, Apple TV (via bridge), and streaming devices
+  </Card>
+</CardGroup>
+
+<Info>
+  DLNA is an open standard, so Musika works with any DLNA/UPnP compatible device regardless of manufacturer.
+</Info>
+
+## Requirements
+
+### Network Setup
+
+For DLNA casting to work, you need:
+
+- **Same WiFi Network**: Your Android device and DLNA device must be on the same network
+- **WiFi Enabled**: WiFi must be active on your phone (cellular data alone won't work)
+- **Compatible Device**: A DLNA/UPnP media renderer on your network
+- **Network Discovery**: Router must allow UPnP/DLNA traffic (usually enabled by default)
+
+<Tip>
+  For best performance, use a 5GHz WiFi network when available. This provides better bandwidth for high-quality audio streaming.
+</Tip>
+
+### Permissions
+
+Musika automatically requests necessary permissions:
+
+- **WiFi Access**: To discover devices on your network
+- **Network State**: To detect network changes
+- **Local Network Discovery**: For UPnP device scanning
+
+## How to Use DLNA Casting
+
+### Connect to a Device
+
+<Steps>
+  <Step title="Start Playback">
+    Begin playing any song in Musika
+  </Step>
+  
+  <Step title="Open Audio Output">
+    Tap the Audio Output button (speaker icon) on the Now Playing screen
+  </Step>
+  
+  <Step title="Select DLNA Device">
+    Scroll to "DLNA/UPnP DEVICES" section and tap your desired device
+  </Step>
+  
+  <Step title="Wait for Connection">
+    Musika establishes connection and transfers playback to the device
+  </Step>
+</Steps>
+
+<Note>
+  Device discovery starts automatically when you open Musika. If devices don't appear immediately, tap the "Scan for Devices" button to refresh the list.
+</Note>
+
+### Control Playback
+
+Once connected to a DLNA device, you have full control:
+
+- **Play/Pause**: Control playback from your phone
+- **Skip Tracks**: Navigate through your queue normally
+- **Volume Control**: Adjust volume directly from Musika
+- **Seek**: Jump to any position in the current track
+- **Queue Management**: Add, remove, or reorder tracks
+
+### Disconnect
+
+To switch back to your phone or another device:
+
+<Steps>
+  <Step title="Open Audio Output">
+    Tap the speaker icon again
+  </Step>
+  
+  <Step title="Select Phone Output">
+    Choose your phone speaker or another output device
+  </Step>
+  
+  <Step title="Playback Switches">
+    Music seamlessly transfers to the new output
+  </Step>
+</Steps>
+
+## Supported Features
+
+### Full Feature Support
+
+<Accordion title="Playback Control">
+  ✅ **Play/Pause**: Start and stop playback
+  ✅ **Skip Forward/Backward**: Navigate through tracks
+  ✅ **Seek**: Jump to any position in track
+  ✅ **Stop**: Completely stop playback
+</Accordion>
+
+<Accordion title="Volume & Audio">
+  ✅ **Volume Control**: Adjust volume from your phone
+  ✅ **Mute**: Temporarily mute audio
+  ✅ **Audio Quality**: Streams in high quality
+  ✅ **Format Support**: Automatic format conversion if needed
+</Accordion>
+
+<Accordion title="Content & Metadata">
+  ✅ **Queue Management**: Full playlist and queue support
+  ✅ **YouTube Music**: Stream YouTube Music content
+  ✅ **Metadata Display**: Song title, artist, and artwork
+  ✅ **Album Artwork**: High-resolution cover art display
+</Accordion>
+
+<Accordion title="Device Features">
+  ✅ **Device Discovery**: Automatic discovery of DLNA/UPnP devices
+  ✅ **Multi-Device**: Switch between different devices
+  ✅ **Connection Status**: Real-time connection monitoring
+  ✅ **Error Recovery**: Automatic reconnection on network issues
+</Accordion>
+
+## Technical Details
+
+### Protocols Used
+
+<Info>
+  Musika uses industry-standard protocols for maximum compatibility:
+  - **UPnP/DLNA**: Device discovery and control
+  - **HTTP Streaming**: Audio delivery to devices  
+  - **SOAP**: Device control commands
+  - **SSDP**: Simple Service Discovery Protocol
+</Info>
+
+### Network Requirements
+
+- **Ports**: Dynamic port allocation (typically 1024-65535)
+- **Multicast**: UDP multicast for device discovery (239.255.255.250:1900)
+- **Firewall**: Ensure router firewall allows UPnP/DLNA traffic
+- **Bandwidth**: Recommended 5+ Mbps for high-quality streaming
+
+### Audio Formats
+
+Most DLNA devices support:
+- **MP3**: Universal compatibility
+- **AAC**: High-quality compressed audio
+- **WAV**: Uncompressed audio
+- **FLAC**: Lossless compressed audio
+
+<Tip>
+  Musika automatically transcodes audio formats if your DLNA device doesn't support the source format, ensuring compatibility.
+</Tip>
+
+## Device Discovery
+
+### Automatic Discovery
+
+Musika automatically searches for DLNA devices:
+
+- **On App Start**: Scans network when Musika opens
+- **Network Changes**: Re-scans when you switch WiFi networks
+- **Background Refresh**: Periodic scans for new devices
+- **Manual Scan**: Trigger scan anytime from audio output menu
+
+### Manual Scanning
+
+If devices don't appear automatically:
+
+1. Open Audio Output menu
+2. Scroll to DLNA/UPnP section
+3. Tap "Scan for Devices" button
+4. Wait 5-10 seconds for results
+
+<Note>
+  Some devices may take longer to appear depending on network configuration and device boot time. If a device was recently powered on, try scanning again after 30 seconds.
+</Note>
+
+## Troubleshooting
+
+### No Devices Found
+
+<Accordion title="Network Connectivity">
+  **Check Network Connection**:
+  - Verify both devices are on the same WiFi network
+  - Check WiFi is enabled on your phone
+  - Ensure DLNA device is network-connected
+  - Verify router is powered on and functioning
+
+  **Test Network**:
+  - Try accessing other network devices
+  - Check if DLNA device appears in router's device list
+  - Test with another DLNA app to verify device compatibility
+</Accordion>
+
+<Accordion title="Device Configuration">
+  **DLNA Device Settings**:
+  - Verify DLNA/UPnP is enabled on the device
+  - Check if device supports media renderer functionality
+  - Look for firmware updates for the DLNA device
+  - Consult device manual for DLNA setup instructions
+
+  **Router Settings**:
+  - Enable UPnP in router settings (usually under Advanced)
+  - Disable AP Isolation if enabled
+  - Check firewall isn't blocking DLNA traffic
+  - Try rebooting the router
+</Accordion>
+
+### Connection Issues
+
+<Accordion title="Can't Connect to Device">
+  **Troubleshooting Steps**:
+  1. **Restart App**: Close and reopen Musika
+  2. **Restart Device**: Power cycle your DLNA device
+  3. **Reconnect WiFi**: Disconnect and reconnect to WiFi
+  4. **Move Closer**: Ensure good WiFi signal strength
+  5. **Update App**: Install latest Musika version
+
+  **Device-Specific Issues**:
+  - Some devices only allow one connection at a time
+  - Disconnect other apps using the device
+  - Check if device needs to be in specific mode
+  - Verify device isn't in standby mode
+</Accordion>
+
+<Accordion title="Connection Drops">
+  **Maintaining Stable Connection**:
+  - Keep phone close to WiFi router
+  - Avoid network congestion (pause large downloads)
+  - Disable battery optimization for Musika
+  - Use 5GHz WiFi for better stability
+  - Keep both devices on same WiFi band (2.4GHz or 5GHz)
+
+  **Network Optimization**:
+  - Enable QoS (Quality of Service) on router
+  - Reduce WiFi interference from other devices
+  - Update router firmware
+  - Consider dedicated network for media streaming
+</Accordion>
+
+### Playback Problems
+
+<Accordion title="No Audio or Poor Quality">
+  **Audio Issues**:
+  - **No Sound**: Check volume on both phone and DLNA device
+  - **Distorted Audio**: Reduce streaming quality or check network speed
+  - **Stuttering**: Improve WiFi signal or reduce network traffic
+  - **Format Issues**: Some devices may not support all formats
+
+  **Solutions**:
+  - Test with different audio tracks
+  - Lower streaming quality in settings
+  - Move phone closer to router
+  - Restart both app and device
+  - Clear Musika cache
+</Accordion>
+
+<Accordion title="Control Not Working">
+  **Playback Control Issues**:
+  - **Can't Pause/Play**: Device may not support control
+  - **Volume Not Working**: Use device's native volume control
+  - **Seek Not Working**: Some devices don't support seeking
+  - **Queue Issues**: Restart playback
+
+  **Fixes**:
+  - Disconnect and reconnect to device
+  - Check device is still on network
+  - Verify device supports the feature
+  - Update device firmware
+</Accordion>
+
+## DLNA vs Chromecast
+
+### Comparison
+
+| Feature | DLNA/UPnP | Chromecast |
+|---------|-----------|------------|
+| Local Network | ✅ Required | ✅ Required |
+| Device Discovery | ✅ Automatic | ✅ Automatic |
+| Internet Required | ❌ No | ✅ Yes (initial setup) |
+| Device Support | Wide compatibility | Google devices |
+| Protocol | Open standard | Proprietary |
+| Setup | Zero configuration | One-time setup |
+| Audio Quality | High | High |
+| Control | Full | Full |
+
+<Info>
+  Musika supports both DLNA and Chromecast, giving you maximum flexibility. Use DLNA for non-Google devices and when you want completely local streaming without internet dependency.
+</Info>
+
+## Popular Compatible Devices
+
+### Tested Devices
+
+Musika works with:
+
+- **Smart TVs**: Samsung, LG, Sony, Vizio, Philips
+- **Network Speakers**: Sonos, Denon HEOS, Bose SoundTouch, Yamaha MusicCast
+- **AV Receivers**: Yamaha, Onkyo, Pioneer, Denon, Marantz
+- **Media Players**: Roku, Amazon Fire TV, Western Digital
+- **NAS Devices**: Synology, QNAP (when acting as renderer)
+- **Software Renderers**: VLC, Kodi, Plex, Jellyfin
+
+<Tip>
+  Look for the DLNA or UPnP logo on your device's specifications or manual. This confirms compatibility with Musika's casting feature.
+</Tip>
+
+## Privacy & Security
+
+### Local Network Only
+
+DLNA casting is completely local:
+
+- **No Internet Required**: Works without internet connection (after initial song load)
+- **No External Servers**: Audio streams directly from phone to device
+- **Local Network Only**: Only works on your local WiFi network
+- **No Data Collection**: No usage data sent to external servers
+
+### Security Considerations
+
+- **Network Security**: Use WPA2 or WPA3 WiFi encryption
+- **Guest Network**: Consider separate network for smart home devices
+- **Router Firewall**: Keep router firewall enabled
+- **Device Updates**: Keep DLNA devices firmware updated
+
+## Advanced Tips
+
+### Multiple Devices
+
+Switch between different DLNA devices:
+
+1. Disconnect from current device
+2. Select new device from audio output menu
+3. Playback resumes on new device
+4. Previous device becomes available again
+
+<Note>
+  You can only stream to one DLNA device at a time. Multi-room audio requires devices that support synchronization (like Sonos).
+</Note>
+
+### Network Performance
+
+Optimize streaming quality:
+
+- **Use 5GHz WiFi**: Better bandwidth and less interference
+- **Position Router**: Central location with good coverage
+- **Reduce Congestion**: Limit other network traffic during playback
+- **QoS Settings**: Prioritize media traffic in router settings
+- **Wired Connection**: Use Ethernet for DLNA device when possible
+
+### Compatibility Testing
+
+To verify device supports DLNA:
+
+1. Look for DLNA/UPnP certification logo
+2. Check manufacturer specifications for "DLNA Media Renderer"
+3. Consult device manual for UPnP/DLNA settings
+4. Test with another DLNA controller app
+5. Search online for "[device model] DLNA support"
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Stream Music" icon="music" href="/features/streaming">
+    Learn about Musika's streaming capabilities
+  </Card>
+  <Card title="Create Playlists" icon="list" href="/features/playlists">
+    Build playlists to cast to your devices
+  </Card>
+</CardGroup>

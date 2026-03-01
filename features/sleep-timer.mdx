@@ -1,0 +1,377 @@
+---
+title: Sleep Timer
+description: Automatic playback stop with gradual fade-out for peaceful listening before sleep
+---
+
+Musika's sleep timer allows you to enjoy music while falling asleep without worrying about it playing all night. Set a timer and let the music gently fade out, helping you drift off peacefully.
+
+## Overview
+
+The sleep timer automatically stops playback after a specified duration, perfect for:
+
+- **Bedtime Listening**: Fall asleep to music without draining battery
+- **Meditation Sessions**: Set timed sessions for meditation or relaxation
+- **Focus Work**: Time-box listening sessions during work or study
+- **Power Naps**: Wake up to silence after a short rest
+- **Podcasts**: Stop playback after current episode or chapter
+
+<Info>
+  Unlike simple timers, Musika's sleep timer includes fade-out functionality, gradually reducing volume for a smooth transition to silence.
+</Info>
+
+## Setting a Sleep Timer
+
+### Quick Setup
+
+<Steps>
+  <Step title="Start Playback">
+    Begin playing your music or playlist
+  </Step>
+  
+  <Step title="Open Sleep Timer">
+    Tap the menu button (three dots) on the Now Playing screen
+  </Step>
+  
+  <Step title="Select Duration">
+    Choose from preset durations or set a custom time
+  </Step>
+  
+  <Step title="Confirm">
+    Timer starts counting down immediately
+  </Step>
+</Steps>
+
+<Tip>
+  You can modify or cancel the sleep timer at any time before it expires. Access the timer again from the Now Playing menu.
+</Tip>
+
+## Timer Duration Options
+
+### Preset Durations
+
+Quick-select common timer lengths:
+
+<CardGroup cols={2}>
+  <Card title="15 Minutes" icon="clock">
+    Quick power nap or short meditation
+  </Card>
+  <Card title="30 Minutes" icon="clock">
+    Standard nap or relaxation session
+  </Card>
+  <Card title="45 Minutes" icon="clock">
+    Extended listening before sleep
+  </Card>
+  <Card title="60 Minutes" icon="clock">
+    One hour of bedtime music
+  </Card>
+  <Card title="90 Minutes" icon="clock">
+    Full sleep cycle support
+  </Card>
+  <Card title="Custom" icon="sliders">
+    Set any duration from 1 to 999 minutes
+  </Card>
+</CardGroup>
+
+### Custom Timer
+
+Set precise timing:
+
+1. Select "Custom" from duration options
+2. Enter exact number of minutes
+3. Confirm to start timer
+4. Timer begins countdown immediately
+
+<Note>
+  Custom timer duration range: 1-999 minutes (up to 16.5 hours). Perfect for all-day background music scenarios.
+</Note>
+
+## Fade-Out Feature
+
+### Gradual Volume Reduction
+
+Instead of abruptly stopping, the sleep timer includes a gentle fade-out:
+
+- **Smooth Transition**: Volume gradually decreases over final minutes
+- **Peaceful Stop**: Music fades to silence naturally
+- **Customizable Duration**: Configure fade-out length in settings
+- **Natural Feel**: Mimics the way you naturally drift to sleep
+
+<Accordion title="How Fade-Out Works">
+  When enabled, the sleep timer begins reducing volume during the final minutes:
+  
+  - **Default**: 2-minute fade-out starting before timer expires
+  - **Configurable**: Adjust fade duration from 30 seconds to 5 minutes
+  - **Smooth Curve**: Volume reduces on a logarithmic curve for natural feel
+  - **Gentle Stop**: Playback stops only after reaching zero volume
+</Accordion>
+
+<Accordion title="Enable/Disable Fade-Out">
+  Configure fade-out behavior:
+  
+  1. Go to Settings > Playback > Sleep Timer
+  2. Toggle "Fade Out" option
+  3. Adjust "Fade Duration" slider
+  4. Changes apply to all future timers
+  
+  **Options**:
+  - Enable fade-out with custom duration
+  - Disable for instant stop
+  - Adjust fade curve (linear, logarithmic, exponential)
+</Accordion>
+
+## Smart Timer Features
+
+### End of Track Option
+
+<Info>
+  Enable "Finish Current Track" to let the current song complete before stopping, even if the timer expires during playback.
+</Info>
+
+**How It Works**:
+- Timer expires during a song
+- Instead of stopping mid-song, playback continues
+- Playback stops (with fade-out) after track ends
+- Perfect for avoiding jarring interruptions
+
+### End of Queue Option
+
+Stop after all queued tracks complete:
+
+- Timer acts as maximum duration
+- Playback continues until queue ends or timer expires
+- Useful for playlist-based sleep music
+- Ensures you hear complete content
+
+<Tip>
+  Combine "End of Track" with a short timer to ensure the current song finishes without playing much more.
+</Tip>
+
+## Timer Management
+
+### Active Timer Display
+
+When a timer is active, you'll see:
+
+- **Countdown Display**: Remaining time shown on Now Playing screen
+- **Visual Indicator**: Timer icon in notification
+- **Time Remaining**: Updated every minute
+- **Quick Cancel**: Tap timer display to cancel or modify
+
+### Modify Active Timer
+
+<Steps>
+  <Step title="Access Timer">
+    Tap the timer display or menu button
+  </Step>
+  
+  <Step title="Choose Action">
+    - Extend timer (add more time)
+    - Reduce timer (less time)
+    - Change duration completely
+    - Cancel timer
+  </Step>
+  
+  <Step title="Confirm Changes">
+    Timer updates immediately with new settings
+  </Step>
+</Steps>
+
+### Cancel Timer
+
+Stop the timer before it expires:
+
+- Tap timer countdown on Now Playing screen
+- Select "Cancel Timer" from menu
+- Or set timer duration to 0
+- Playback continues normally
+
+## Timer Notifications
+
+### Countdown Reminders
+
+Stay informed about timer progress:
+
+<Accordion title="Timer Started">
+  - Notification when timer begins
+  - Shows total duration set
+  - Quick access to cancel or modify
+  - Dismissible without affecting timer
+</Accordion>
+
+<Accordion title="Approaching Expiration">
+  - Optional notification 5 minutes before timer expires
+  - Allows extending timer if you're still awake
+  - Configure reminder timing in settings
+  - Quick extend buttons (5, 10, 15 minutes)
+</Accordion>
+
+<Accordion title="Timer Expired">
+  - Notification when playback stops
+  - Confirms timer completed successfully
+  - Shows total time elapsed
+  - Quick restart option
+</Accordion>
+
+<Note>
+  Configure notification preferences in Settings > Sleep Timer > Notifications. You can enable/disable each notification type independently.
+</Note>
+
+## Use Cases
+
+### Bedtime Routine
+
+<CardGroup cols={2}>
+  <Card title="Sleep Music" icon="bed">
+    Set 30-60 minute timer with fade-out for peaceful sleep transition
+  </Card>
+  <Card title="Meditation" icon="spa">
+    Use custom timer for timed meditation or relaxation sessions
+  </Card>
+  <Card title="Background Sounds" icon="water">
+    Play nature sounds or white noise with auto-stop
+  </Card>
+  <Card title="Audiobooks" icon="book">
+    Stop after a chapter or time limit while listening in bed
+  </Card>
+</CardGroup>
+
+### Productivity
+
+<Accordion title="Focus Sessions">
+  - Set timer for Pomodoro-style work sessions
+  - 25-minute focus music blocks
+  - Automatic break reminders
+  - Time-boxed concentration periods
+</Accordion>
+
+<Accordion title="Power Naps">
+  - 15-20 minute quick rest periods
+  - Wake to silence instead of music
+  - Fade-out prevents jarring wake-ups
+  - Perfect for lunch break naps
+</Accordion>
+
+<Accordion title="Study Sessions">
+  - Time-limited study music
+  - Background music for specific tasks
+  - Automatic breaks every hour
+  - Focus without manual stopping
+</Accordion>
+
+## Settings & Customization
+
+### Sleep Timer Settings
+
+Customize timer behavior in Settings > Playback > Sleep Timer:
+
+<Accordion title="Default Duration">
+  - Set preferred default timer length
+  - Automatically selected when opening timer
+  - Customize for your routine
+  - Override anytime with custom duration
+</Accordion>
+
+<Accordion title="Fade-Out Configuration">
+  - Enable/disable fade-out
+  - Adjust fade duration (30s - 5min)
+  - Choose fade curve type
+  - Test fade-out without timer
+</Accordion>
+
+<Accordion title="Notification Preferences">
+  - Timer start notification
+  - Approaching expiration reminder
+  - Expiration notification
+  - Reminder timing (5, 10, 15 min before)
+</Accordion>
+
+<Accordion title="Behavior Options">
+  - Finish current track
+  - Wait for queue end
+  - Pause vs. stop behavior
+  - Resume on timer restart
+</Accordion>
+
+## Tips & Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Consistent Routine" icon="calendar">
+    Use same timer duration nightly to build sleep routine
+  </Card>
+  <Card title="Enable Fade-Out" icon="volume-down">
+    Gradual volume reduction is less disruptive to light sleep
+  </Card>
+  <Card title="Playlist Length" icon="list">
+    Match playlist duration to typical timer length
+  </Card>
+  <Card title="Test First" icon="flask">
+    Try different durations to find your sweet spot
+  </Card>
+</CardGroup>
+
+### Optimal Settings for Sleep
+
+- **Duration**: 30-45 minutes (most people fall asleep within this time)
+- **Fade-Out**: 2-3 minutes (gradual enough to be unnoticeable)
+- **Finish Track**: Enabled (prevents mid-song stops)
+- **Reminder**: Disabled (won't wake you if you've fallen asleep)
+
+<Tip>
+  Create a dedicated "Sleep" playlist with calming music that's longer than your timer duration. This ensures varied music each night within your timer window.
+</Tip>
+
+## Troubleshooting
+
+<Accordion title="Timer Not Working">
+  **Timer Doesn't Stop Playback**:
+  - Verify timer is actually set (check notification)
+  - Ensure app isn't being killed by battery optimization
+  - Check timer didn't get canceled accidentally
+  - Update to latest version
+  - Restart app and try again
+
+  **Timer Stops Immediately**:
+  - Check if duration was set to very short time
+  - Verify system time is correct
+  - Clear app cache
+  - Reinstall if issue persists
+</Accordion>
+
+<Accordion title="Fade-Out Issues">
+  **No Fade-Out Occurring**:
+  - Verify fade-out is enabled in settings
+  - Check fade duration isn't set to 0
+  - Ensure timer duration is longer than fade duration
+  - Test fade-out independently
+
+  **Fade Too Sudden or Too Long**:
+  - Adjust fade duration in settings
+  - Try different fade curve types
+  - Match fade duration to your preferences (1-3 min typical)
+  - Test with different music volumes
+</Accordion>
+
+<Accordion title="Notification Problems">
+  **Not Receiving Notifications**:
+  - Check notification permissions for Musika
+  - Verify notifications enabled in Sleep Timer settings
+  - Check Do Not Disturb settings
+  - Ensure notification channel isn't disabled
+
+  **Too Many Notifications**:
+  - Disable unwanted notifications in settings
+  - Adjust reminder timing
+  - Use less frequent reminder intervals
+  - Disable timer start notifications
+</Accordion>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Sleep Playlist" icon="list" href="/features/playlists">
+    Build a perfect sleep music playlist
+  </Card>
+  <Card title="Download for Offline" icon="download" href="/features/offline-playback">
+    Download sleep music to avoid network issues
+  </Card>
+</CardGroup>

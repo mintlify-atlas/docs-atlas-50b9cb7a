@@ -1,0 +1,377 @@
+---
+title: Build Instructions
+description: How to build Musika from source for different architectures
+---
+
+This guide provides comprehensive instructions for building Musika from source for different device architectures and configurations.
+
+## Device Information
+
+Musika supports multiple Android device architectures:
+- **arm64-v8a**: ARM 64-bit (most modern devices)
+- **armeabi-v7a**: ARM 32-bit (older devices)
+- **x86_64**: x86 64-bit (emulators)
+- **x86**: x86 32-bit (emulators)
+
+<Note>
+  For optimal performance, use the architecture-specific build matching your device. For maximum compatibility, use the universal build.
+</Note>
+
+## Quick Build Commands
+
+### Build Universal Debug APK (Recommended)
+
+The universal build includes all architectures and works on any Android device.
+
+<CodeGroup>
+```bash Build
+./gradlew assembleUniversalDebug
+```
+
+```bash Output Location
+app/build/outputs/apk/universal/debug/app-universal-debug.apk
+```
+</CodeGroup>
+
+### Build ARM64 Optimized APK
+
+For modern Android devices (recommended for best performance on 64-bit devices).
+
+<CodeGroup>
+```bash Build
+./gradlew assembleArm64Debug
+```
+
+```bash Output Location
+app/build/outputs/apk/arm64/debug/app-arm64-debug.apk
+```
+</CodeGroup>
+
+## Build Variants
+
+Musika supports multiple build variants for different architectures:
+
+| Variant | Architecture | Use Case |
+|---------|-------------|----------|
+| **universal** | All (armeabi-v7a, arm64-v8a, x86, x86_64) | Maximum compatibility |
+| **arm64** | ARM 64-bit only | Modern devices (Samsung, Google, etc.) |
+| **armeabi** | ARM 32-bit only | Older Android devices |
+| **x86** | x86 32-bit | Android emulators |
+| **x86_64** | x86 64-bit | Modern emulators |
+
+<Note>
+  Most modern Android devices (2017+) use **arm64-v8a** architecture. The universal build is larger but ensures compatibility with all devices.
+</Note>
+
+## Installing on Device
+
+### Using ADB
+
+Install the APK on a connected device using ADB:
+
+<CodeGroup>
+```bash Universal Build
+adb install -r app/build/outputs/apk/universal/debug/app-universal-debug.apk
+```
+
+```bash ARM64 Build
+adb install -r app/build/outputs/apk/arm64/debug/app-arm64-debug.apk
+```
+</CodeGroup>
+
+### Build and Install in One Command
+
+Gradle can build and install directly to a connected device:
+
+<CodeGroup>
+```bash Universal
+./gradlew installUniversalDebug
+```
+
+```bash ARM64
+./gradlew installArm64Debug
+```
+
+```bash ARM 32-bit
+./gradlew installArmv7Debug
+```
+</CodeGroup>
+
+## Configuration Files
+
+### Required Configuration
+
+Before building, ensure you have the following configuration files:
+
+<Steps>
+  <Step title="local.properties">
+    Contains Android SDK path configuration.
+    
+    ```bash
+    cp local.properties.template local.properties
+    ```
+    
+    Edit and add your SDK path:
+    ```properties
+    sdk.dir=/path/to/your/Android/sdk
+    ```
+    
+    <Warning>
+      Never commit `local.properties` to version control. It contains environment-specific paths.
+    </Warning>
+  </Step>
+  
+  <Step title="google-services.json (Optional)">
+    Firebase configuration for analytics and crash reporting.
+    
+    ```bash
+    cp app/google-services.json.template app/google-services.json
+    ```
+    
+    <Warning>
+      Never commit `google-services.json` to version control. It contains sensitive API keys.
+    </Warning>
+    
+    <Note>
+      Firebase is optional. The app will build and run without it, but analytics and crash reporting will be disabled.
+    </Note>
+  </Step>
+  
+  <Step title="persistent-debug.keystore">
+    Debug signing key (automatically generated).
+    
+    <Note>
+      Debug builds use the persistent-debug.keystore for consistent signing across builds.
+    </Note>
+  </Step>
+</Steps>
+
+## Building for Different Configurations
+
+### Debug Builds
+
+Debug builds include debugging information and are not optimized:
+
+<CodeGroup>
+```bash Universal Debug
+./gradlew assembleUniversalDebug
+```
+
+```bash ARM64 Debug
+./gradlew assembleArm64Debug
+```
+
+```bash FOSS Debug (no Firebase)
+./gradlew assembleFossDebug
+```
+</CodeGroup>
+
+### Release Builds
+
+Release builds are optimized and require signing configuration:
+
+<CodeGroup>
+```bash Universal Release
+./gradlew assembleUniversalRelease
+```
+
+```bash ARM64 Release
+./gradlew assembleArm64Release
+```
+</CodeGroup>
+
+<Warning>
+  Release builds require proper signing configuration in `gradle.properties` or environment variables. See the [Contributing Guide](/development/contributing) for details.
+</Warning>
+
+## Troubleshooting
+
+### Check Connected Devices
+
+Verify that your device is connected and recognized:
+
+```bash
+adb devices
+```
+
+You should see your device listed:
+```
+List of devices attached
+RZ8M90F41BL    device
+```
+
+### Check Device Architecture
+
+Determine which architecture your device uses:
+
+```bash
+adb shell getprop ro.product.cpu.abi
+```
+
+Common outputs:
+- `arm64-v8a` - Use ARM64 build
+- `armeabi-v7a` - Use ARMv7 build
+- `x86_64` - Use x86_64 build
+
+### Clean Build
+
+If you encounter build issues, try a clean build:
+
+<Steps>
+  <Step title="Clean project">
+    ```bash
+    ./gradlew clean
+    ```
+  </Step>
+  
+  <Step title="Rebuild">
+    ```bash
+    ./gradlew assembleUniversalDebug
+    ```
+  </Step>
+</Steps>
+
+### View Build Logs
+
+For detailed build information, use the `--info` flag:
+
+```bash
+./gradlew assembleUniversalDebug --info
+```
+
+For even more detail, use `--debug`:
+
+```bash
+./gradlew assembleUniversalDebug --debug
+```
+
+### Common Build Errors
+
+#### SDK Location Not Found
+
+```
+SDK location not found. Define location with an ANDROID_SDK_ROOT environment
+variable or by setting the sdk.dir path in your project's local properties file.
+```
+
+**Solution**: Create `local.properties` with your SDK path:
+```properties
+sdk.dir=/path/to/your/Android/sdk
+```
+
+#### Google Services Plugin Error
+
+```
+File google-services.json is missing. The Google Services Plugin cannot function without it.
+```
+
+**Solution**: Either:
+1. Add your `google-services.json` file, or
+2. Build the FOSS variant without Firebase:
+   ```bash
+   ./gradlew assembleFossDebug
+   ```
+
+#### Out of Memory
+
+```
+GC overhead limit exceeded
+```
+
+**Solution**: Increase Gradle memory in `gradle.properties`:
+```properties
+org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=512m
+```
+
+## Build Optimization Tips
+
+### Parallel Builds
+
+Enable parallel builds in `gradle.properties`:
+```properties
+org.gradle.parallel=true
+org.gradle.configureondemand=true
+```
+
+### Build Cache
+
+Enable build cache for faster builds:
+```properties
+org.gradle.caching=true
+```
+
+### Configuration Cache (Experimental)
+
+```bash
+./gradlew assembleDebug --configuration-cache
+```
+
+## Advanced Build Options
+
+### Building All Variants
+
+Build all variants at once:
+
+```bash
+./gradlew assembleDebug
+```
+
+This creates builds for all architectures in the debug configuration.
+
+### Building Bundles (AAB)
+
+For Google Play Store distribution:
+
+```bash
+./gradlew bundleRelease
+```
+
+<Note>
+  Android App Bundles (AAB) allow Google Play to generate optimized APKs for each device configuration automatically.
+</Note>
+
+### Custom Build Tasks
+
+List all available tasks:
+
+```bash
+./gradlew tasks
+```
+
+List tasks with detailed information:
+
+```bash
+./gradlew tasks --all
+```
+
+## Notes
+
+<Note>
+  - Most modern Android devices use **arm64-v8a** architecture
+  - The universal build is larger but ensures maximum compatibility
+  - ARM64 builds are smaller and may offer better performance on 64-bit devices
+  - Debug builds use the persistent-debug.keystore for consistent signing
+  - Firebase is optional - the app builds and runs without it
+</Note>
+
+## Example: Samsung Galaxy M30s
+
+As a reference, here's how to build for the Samsung Galaxy M30s:
+
+- **Model**: Samsung SM-M307F (Galaxy M30s)
+- **Architecture**: arm64-v8a
+- **Device ID**: RZ8M90F41BL
+
+### Recommended Build
+
+```bash
+./gradlew assembleArm64Debug
+```
+
+### Install Directly
+
+```bash
+./gradlew installArm64Debug
+```
+
+The arm64 build is smaller and optimized for this device, but the universal build will also work perfectly.

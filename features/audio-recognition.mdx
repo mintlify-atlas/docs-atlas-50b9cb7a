@@ -1,0 +1,311 @@
+---
+title: Audio Recognition
+description: Identify songs playing around you using advanced audio recognition technology
+---
+
+Musika includes powerful audio recognition capabilities that let you identify songs playing in your environment, discover new music, and instantly add identified tracks to your library.
+
+## Overview
+
+### What is Audio Recognition?
+
+Audio recognition (also known as music identification or audio fingerprinting) analyzes the audio in your environment and identifies the song that's playing. Musika uses advanced audio recognition technology to:
+
+- **Identify Songs**: Recognize music playing around you
+- **Discover New Music**: Find and save songs you hear
+- **Build Your Library**: Instantly add identified tracks
+- **Access Song Info**: Get complete track, artist, and album details
+
+<Info>
+  Musika's audio recognition is powered by [Music Recognizer](https://github.com/aleksey-saenko/MusicRecognizer), providing reliable identification for millions of songs.
+</Info>
+
+## How to Use
+
+### Identifying a Song
+
+<Steps>
+  <Step title="Access Recognition">
+    Tap the audio recognition button (waveform or microphone icon) in the app
+  </Step>
+  
+  <Step title="Start Listening">
+    Hold your device near the audio source for 5-10 seconds
+  </Step>
+  
+  <Step title="View Results">
+    Musika displays the identified song with full details
+  </Step>
+  
+  <Step title="Take Action">
+    Play, save, or add the song to your library
+  </Step>
+</Steps>
+
+<Tip>
+  For best results, hold your device close to the audio source and minimize background noise. The recognition needs a clear sample of the music to identify it accurately.
+</Tip>
+
+### Quick Recognition
+
+**Fast Identification Process**:
+1. Open Musika
+2. Tap the recognition button
+3. Wait 5-10 seconds while listening
+4. Get instant results
+
+<Note>
+  Recognition works best with the original studio recording. Live performances, covers, or low-quality recordings may be harder to identify or may match to the original version instead.
+</Note>
+
+## Recognition Results
+
+### Song Information
+
+When a song is identified, you'll see:
+
+<CardGroup cols={2}>
+  <Card title="Track Details" icon="music">
+    Song title, artist, album, and release year
+  </Card>
+  <Card title="Album Artwork" icon="image">
+    High-resolution cover art for the identified track
+  </Card>
+  <Card title="Additional Info" icon="circle-info">
+    Genre, duration, and other metadata
+  </Card>
+  <Card title="Quick Actions" icon="bolt">
+    Play, save, share, or add to playlist
+  </Card>
+</CardGroup>
+
+### Actions After Recognition
+
+Once a song is identified, you can:
+
+- **Play Now**: Immediately start playing the identified song
+- **Add to Library**: Save to your music library
+- **Add to Playlist**: Include in any of your playlists
+- **Share**: Send the song to friends
+- **View Artist**: Explore more from the artist
+- **View Album**: See the complete album
+- **Download**: Save for offline listening
+
+## Recognition History
+
+### Tracking Identified Songs
+
+Musika maintains a history of all songs you've identified:
+
+- **Complete History**: Access all previously identified tracks
+- **Chronological Order**: Most recent identifications first
+- **Search History**: Find previously identified songs
+- **Batch Actions**: Add multiple recognized songs at once
+
+<Tip>
+  Use recognition history to rediscover songs you identified but didn't save immediately. Perfect for when you hear great music but are busy at the moment.
+</Tip>
+
+### Managing History
+
+<Accordion title="View History">
+  1. Open audio recognition
+  2. Tap history button
+  3. Browse all identified songs
+  4. Tap any entry to view details or take actions
+</Accordion>
+
+<Accordion title="Clear History">
+  - Clear individual entries
+  - Clear all history at once
+  - History clearing is permanent
+  - Doesn't affect songs added to library
+</Accordion>
+
+## Technical Details
+
+### How It Works
+
+Audio recognition uses a sophisticated process:
+
+1. **Audio Capture**: Records a short sample from your microphone
+2. **Fingerprinting**: Creates a unique "fingerprint" of the audio
+3. **Matching**: Compares fingerprint against massive song database
+4. **Results**: Returns matching songs with confidence scores
+
+### Recognition Technology
+
+<Info>
+  Musika uses acoustic fingerprinting technology that:
+  - Works even with background noise
+  - Identifies songs in seconds
+  - Handles various audio qualities
+  - Maintains privacy (only sends fingerprint, not audio)
+</Info>
+
+**Technology Features**:
+- **Noise Resistant**: Works in moderately noisy environments
+- **Fast Processing**: Results typically in 5-10 seconds
+- **High Accuracy**: Reliable identification for mainstream and indie music
+- **Privacy-Focused**: Audio samples processed locally when possible
+
+## Use Cases
+
+### Discovery Scenarios
+
+<CardGroup cols={2}>
+  <Card title="In Public Spaces" icon="store">
+    Identify songs in cafes, stores, or restaurants
+  </Card>
+  <Card title="From Media" icon="tv">
+    Recognize music from TV shows, movies, or videos
+  </Card>
+  <Card title="At Events" icon="music">
+    Discover songs at concerts, parties, or festivals
+  </Card>
+  <Card title="From Radio" icon="radio">
+    Identify tracks from radio or streaming
+  </Card>
+</CardGroup>
+
+### Practical Applications
+
+<Accordion title="Music Discovery">
+  - Find new artists and songs organically
+  - Build a collection of discovered music
+  - Identify songs from curated playlists or DJ sets
+  - Discover music from different cultures or regions
+</Accordion>
+
+<Accordion title="Library Building">
+  - Quickly add overheard songs to your library
+  - Create "Discovered" playlists from identified tracks
+  - Find songs you remember hearing but can't recall
+  - Build themed playlists from various sources
+</Accordion>
+
+<Accordion title="Social Sharing">
+  - Share discovered songs with friends
+  - Identify and share music from social gatherings
+  - Document music from events and experiences
+  - Create collaborative discovery playlists
+</Accordion>
+
+## Permissions & Privacy
+
+### Required Permissions
+
+Audio recognition requires:
+
+- **Microphone Access**: To listen to environmental audio
+- **Internet Connection**: To query the music database
+- **Storage** (optional): To cache recognition results
+
+<Warning>
+  Musika only accesses your microphone when you actively trigger audio recognition. The microphone is never used in the background or without your explicit action.
+</Warning>
+
+### Privacy Considerations
+
+**How Your Data is Protected**:
+- **Local Processing**: Audio fingerprinting happens on your device when possible
+- **No Audio Storage**: Actual audio is never stored or transmitted
+- **Anonymous Queries**: Recognition requests don't include personal information
+- **Temporary Samples**: Audio samples are immediately discarded after fingerprinting
+
+## Limitations
+
+### When Recognition May Not Work
+
+<Accordion title="Audio Quality Issues">
+  - **Too Noisy**: Excessive background noise can interfere
+  - **Too Quiet**: Audio source must be audible
+  - **Poor Quality**: Heavily compressed or distorted audio
+  - **Multiple Songs**: Playing multiple songs simultaneously
+</Accordion>
+
+<Accordion title="Content Limitations">
+  - **Obscure Music**: Very rare or unreleased tracks may not be in the database
+  - **Classical Music**: Some classical pieces may be difficult to identify
+  - **Ambient/Instrumental**: Songs without distinctive features
+  - **Live Performances**: May match to studio version or not at all
+</Accordion>
+
+<Accordion title="Technical Constraints">
+  - **No Internet**: Requires active internet connection
+  - **Short Samples**: Needs at least 5-10 seconds of clear audio
+  - **Covers/Remixes**: May identify as original version
+  - **Regional Availability**: Some tracks may not be available in your region
+</Accordion>
+
+## Troubleshooting
+
+<Accordion title="Recognition Not Working">
+  **Can't Identify Song**:
+  - Ensure microphone permission is granted
+  - Move closer to audio source
+  - Reduce background noise
+  - Try a different part of the song (chorus often works best)
+  - Verify internet connection
+
+  **App Not Listening**:
+  - Check microphone permissions in device settings
+  - Restart the app
+  - Verify microphone works in other apps
+  - Update to latest version
+</Accordion>
+
+<Accordion title="Incorrect Results">
+  **Wrong Song Identified**:
+  - Try recognizing a different part of the song
+  - Ensure only one song is playing
+  - Check if it's a cover or remix of the identified song
+  - Verify audio source quality
+
+  **Multiple Matches**:
+  - Musika shows the most confident match
+  - Different versions (live, remix) may all match
+  - Select the correct version from results
+</Accordion>
+
+<Accordion title="Performance Issues">
+  **Slow Recognition**:
+  - Check internet speed
+  - Try again if first attempt times out
+  - Clear app cache
+  - Ensure stable network connection
+
+  **App Crashes**:
+  - Update to latest version
+  - Clear app cache and data
+  - Check for sufficient device storage
+  - Report crash via feedback
+</Accordion>
+
+## Tips for Best Results
+
+<CardGroup cols={2}>
+  <Card title="Optimal Timing" icon="clock">
+    Start recognition during the chorus or distinctive instrumental parts
+  </Card>
+  <Card title="Reduce Noise" icon="volume-xmark">
+    Minimize talking and background sounds during recognition
+  </Card>
+  <Card title="Good Position" icon="location-dot">
+    Hold device close to speaker or audio source
+  </Card>
+  <Card title="Full Sample" icon="hourglass">
+    Let recognition listen for the full duration for better accuracy
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Build Playlists" icon="list" href="/features/playlists">
+    Organize discovered songs into playlists
+  </Card>
+  <Card title="Download Music" icon="download" href="/features/offline-playback">
+    Save identified tracks for offline listening
+  </Card>
+</CardGroup>

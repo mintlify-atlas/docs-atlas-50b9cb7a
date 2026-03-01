@@ -1,0 +1,99 @@
+---
+title: Installation
+description: Download and install Musika on your Android device
+---
+
+Musika is available for Android devices. Follow the steps below to install the app on your device.
+
+## Download from GitHub Releases
+
+<Steps>
+  <Step title="Visit the Releases Page">
+    Navigate to the [Musika Releases Page](https://github.com/jed1boy/Musika/releases/latest) on GitHub to download the latest version.
+  </Step>
+
+  <Step title="Download the APK">
+    Download the latest APK file from the release assets. The file will be named something like `Musika-vX.X.X.apk`.
+    
+    <Info>
+      Make sure to download the APK from the official GitHub releases page to ensure you're getting the authentic, safe version of Musika.
+    </Info>
+  </Step>
+
+  <Step title="Enable Unknown Sources">
+    Before installing, you may need to enable installation from unknown sources on your Android device:
+    
+    1. Go to **Settings** > **Security** (or **Privacy**)
+    2. Enable **Install unknown apps** or **Unknown sources**
+    3. Select your browser or file manager and allow installation from this source
+    
+    <Warning>
+      Only enable unknown sources for trusted applications. Remember to disable this setting after installation if you prefer.
+    </Warning>
+  </Step>
+
+  <Step title="Install the APK">
+    1. Open your device's file manager or Downloads folder
+    2. Tap on the downloaded Musika APK file
+    3. Follow the on-screen prompts to complete the installation
+    4. Tap **Install** and wait for the process to complete
+  </Step>
+
+  <Step title="Launch Musika">
+    Once installed, tap **Open** to launch Musika, or find the app icon in your app drawer.
+  </Step>
+</Steps>
+
+## System Requirements
+
+- **Platform**: Android
+- **Minimum Android Version**: Android 6.0 (Marshmallow) or higher recommended
+- **Storage**: At least 100 MB free space for the app (additional space needed for offline downloads)
+- **Internet Connection**: Required for streaming (optional for offline playback)
+
+## Alternative: Build from Source
+
+If you prefer to build Musika from source, you can follow these steps:
+
+<Steps>
+  <Step title="Clone the Repository">
+    ```bash
+    git clone https://github.com/jed1boy/Musika.git
+    cd Musika
+    ```
+  </Step>
+
+  <Step title="Configure Android SDK">
+    ```bash
+    echo "sdk.dir=/path/to/your/android/sdk" > local.properties
+    ```
+    
+    Replace `/path/to/your/android/sdk` with the actual path to your Android SDK installation.
+  </Step>
+
+  <Step title="Firebase Configuration (Optional)">
+    Firebase is required for analytics and reliable imports. See the [FIREBASE_SETUP.md](https://github.com/jed1boy/Musika/blob/main/FIREBASE_SETUP.md) file in the repository for instructions on adding your `google-services.json`.
+    
+    <Note>
+      This step is optional if you're building for personal use without analytics.
+    </Note>
+  </Step>
+
+  <Step title="Build the APK">
+    Build for your device architecture:
+    
+    ```bash
+    # For ARM64 devices (most modern Android phones)
+    ./gradlew :app:assembleArm64Debug
+    
+    # For x86_64 devices (emulators, some tablets)
+    ./gradlew :app:assembleX86_64Debug
+    ```
+    
+    The APK will be generated in the `app/build/outputs/apk/` directory.
+  </Step>
+</Steps>
+
+## Next Steps
+
+Once you've installed Musika, proceed to the [Setup](/setup) guide to configure the app for your first use.

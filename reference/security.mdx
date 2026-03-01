@@ -1,0 +1,242 @@
+---
+title: Security Policy
+description: Security guidelines and vulnerability reporting for Musika
+icon: shield-halved
+---
+
+# Security Policy
+
+<Info>
+Musika takes security seriously. This page outlines our security practices, supported versions, and how to report vulnerabilities responsibly.
+</Info>
+
+## Supported Versions
+
+We release patches for security vulnerabilities in the following versions:
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 3.x.x   | ✅ Yes             |
+| < 3.0   | ❌ No              |
+
+<Warning>
+Only version 3.x.x and newer receive security updates. If you're using an older version, please update to the latest release.
+</Warning>
+
+## Reporting a Vulnerability
+
+If you discover a security vulnerability in Musika, please report it responsibly:
+
+<Steps>
+  <Step title="Do NOT create a public issue">
+    Public disclosure of security vulnerabilities can put users at risk. Please report privately instead.
+  </Step>
+  
+  <Step title="Email us directly">
+    Send details to: **[security@echomusic.fun](mailto:security@echomusic.fun)**
+  </Step>
+  
+  <Step title="Include detailed information">
+    Help us understand and fix the issue quickly by including:
+    - Description of the vulnerability
+    - Steps to reproduce
+    - Potential impact
+    - Any suggested fixes
+  </Step>
+</Steps>
+
+### What to Expect
+
+After you report a vulnerability:
+
+1. **Acknowledgment** - We'll confirm receipt of your report within 48 hours
+2. **Assessment** - We'll evaluate the severity and impact of the issue
+3. **Fix Development** - We'll work on a patch for supported versions
+4. **Coordinated Disclosure** - We'll coordinate with you on the disclosure timeline
+5. **Credit** - We'll acknowledge your contribution (if desired) when the fix is released
+
+## Security Best Practices
+
+### For Developers
+
+If you're contributing to Musika, follow these security guidelines:
+
+<AccordionGroup>
+  <Accordion title="Never commit sensitive files">
+    API keys, tokens, and credentials should never be committed to version control.
+    
+    **Protected files:**
+    - `google-services.json` - Firebase configuration with API keys
+    - `local.properties` - Local development configuration
+    - `*.keystore` / `*.jks` - App signing keys
+    - `secrets.properties` - API keys and secrets
+    - `**/assets/po_token.html` - YouTube authentication tokens
+  </Accordion>
+
+  <Accordion title="Use environment variables">
+    Store sensitive configuration in environment variables or secure properties files that are excluded from version control.
+    
+    Always add sensitive file patterns to `.gitignore`.
+  </Accordion>
+
+  <Accordion title="Keep dependencies updated">
+    Regular updates patch security vulnerabilities in third-party libraries.
+    
+    Monitor dependency security alerts and update promptly.
+  </Accordion>
+
+  <Accordion title="Code review required">
+    All code changes should be reviewed before merging to catch potential security issues.
+    
+    Pay special attention to:
+    - Input validation
+    - Authentication and authorization
+    - Data handling and storage
+    - Network communication
+  </Accordion>
+</AccordionGroup>
+
+### For Users
+
+<CardGroup cols={2}>
+  <Card title="Download from Official Sources" icon="download">
+    Only download APKs from official GitHub releases or trusted sources to avoid malware.
+  </Card>
+  
+  <Card title="Keep App Updated" icon="arrow-up">
+    Install updates promptly to receive security patches and bug fixes.
+  </Card>
+  
+  <Card title="Review Permissions" icon="eye">
+    Be aware of the permissions the app requests. See [Privacy Policy](/reference/privacy-policy) for details.
+  </Card>
+  
+  <Card title="Use Privacy Controls" icon="user-shield">
+    Take advantage of Musika's privacy features like incognito mode and history controls.
+  </Card>
+</CardGroup>
+
+## Sensitive Information
+
+<Warning>
+The following files contain sensitive information and should **never** be committed to version control:
+</Warning>
+
+```bash
+# Firebase configuration
+google-services.json
+
+# Local development
+local.properties
+
+# Signing keys
+*.keystore
+*.jks
+
+# API keys and secrets
+secrets.properties
+
+# Authentication tokens
+**/assets/po_token.html
+```
+
+If you accidentally commit sensitive information:
+
+1. **Rotate credentials immediately** - Assume they are compromised
+2. **Remove from git history** - Use tools like `git filter-branch` or BFG Repo-Cleaner
+3. **Notify maintainers** - Let us know so we can take additional protective measures
+
+## Data Privacy
+
+<Info>
+Musika is committed to user privacy and security. Here's how we protect your data:
+</Info>
+
+### Privacy Principles
+
+<CardGroup cols={2}>
+  <Card title="No Personal Data Collection" icon="ban">
+    We don't collect personal information about our users.
+  </Card>
+  
+  <Card title="Local Storage" icon="hard-drive">
+    User data is stored locally on your device, not on external servers.
+  </Card>
+  
+  <Card title="Minimal Analytics" icon="chart-simple">
+    We collect minimal usage data and crash reports through Firebase Analytics to improve app stability and enhance user experience.
+  </Card>
+  
+  <Card title="Open Source" icon="code">
+    All code is available for public review - no hidden data collection.
+  </Card>
+</CardGroup>
+
+For complete privacy details, see our [Privacy Policy](/reference/privacy-policy).
+
+## Security Features
+
+Musika includes several security and privacy features:
+
+### Data Protection
+
+- **Encrypted Storage** - Sensitive preferences (login sessions, API keys) are stored in encrypted local storage
+- **Secure Communications** - All network requests use HTTPS
+- **No Cloud Sync** - Data stays on your device by default
+
+### Privacy Controls
+
+Users have control over their privacy:
+
+- Pause/clear listen history
+- Pause/clear search history
+- Incognito mode for private browsing
+- Auto-clear history on app close
+- Disable screenshots
+- Control over analytics and crash reporting
+
+### Backup Protection
+
+Sensitive app data is excluded from Android backup and device transfer to prevent unauthorized access.
+
+## Audit & Transparency
+
+### Open Source
+
+Musika's code is fully open source and available for security review:
+
+<Card title="View Source Code" icon="github" href="https://github.com/jed1boy/Musika">
+  Review the complete codebase on GitHub
+</Card>
+
+### Third-Party Services
+
+Musika connects to these external services. Review their security practices:
+
+- **YouTube Music** - [Google Privacy Policy](https://policies.google.com/privacy)
+- **SponsorBlock** - [SponsorBlock Privacy](https://sponsor.ajay.app)
+- **OpenRouter** (optional) - [OpenRouter Privacy](https://openrouter.ai/privacy)
+
+<Note>
+Musika only connects to these services to deliver requested features. You can control which features to use.
+</Note>
+
+## Contact
+
+For security-related questions or to report vulnerabilities:
+
+<CardGroup cols={2}>
+  <Card title="Email" icon="envelope" href="mailto:security@echomusic.fun">
+    security@echomusic.fun
+  </Card>
+  
+  <Card title="GitHub Security Advisory" icon="github" href="https://github.com/jed1boy/Musika/security">
+    Create a private security advisory
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+Thank you for helping keep Musika secure! Responsible disclosure helps protect all users.
+</Note>
