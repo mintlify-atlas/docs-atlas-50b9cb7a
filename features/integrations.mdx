@@ -1,0 +1,202 @@
+---
+title: Platform integrations
+description: Use Musika across multiple platforms including Android Auto, Android TV, and Last.fm
+icon: plug
+---
+
+Musika seamlessly integrates with various platforms and services to provide a connected music experience across all your devices.
+
+## Android Auto
+
+Enjoy Musika on your car's display with full Android Auto support for safe, hands-free music control while driving.
+
+### Features
+
+- **Full Media Controls**: Play, pause, skip, and browse from your car display
+- **Voice Commands**: Use Google Assistant for hands-free control
+- **Now Playing Display**: See current track information on your dashboard
+- **Browse Library**: Access your playlists, albums, and artists
+- **Search**: Find music using voice or on-screen keyboard
+- **Queue Management**: View and manage your playback queue
+
+### Setup
+
+<Steps>
+  <Step title="Connect your phone">
+    Connect your Android device to your car via USB or wireless Android Auto
+  </Step>
+  
+  <Step title="Select Musika">
+    On your car's display, tap the Android Auto icon and select Musika from the media apps
+  </Step>
+  
+  <Step title="Start playing">
+    Browse your library or use voice commands to start playing music
+  </Step>
+</Steps>
+
+### Voice Commands
+
+Use Google Assistant with Android Auto:
+
+- "Play music on Musika"
+- "Play [artist name] on Musika"
+- "Play [song name] on Musika"
+- "Next song"
+- "Pause music"
+- "Resume music"
+
+<Note>
+  Android Auto requires Android 8.0 or higher and the Android Auto app on your phone.
+</Note>
+
+## Android TV
+
+Musika supports Android TV with a leanback interface optimized for large screens and remote control navigation.
+
+### Features
+
+- **TV-Optimized Interface**: Easy navigation with remote control
+- **Leanback Support**: Designed for the TV experience
+- **Home Screen Banner**: Custom TV launcher banner
+- **No Touchscreen Required**: Fully navigable with D-pad
+- **Large Display**: Enjoy album art and lyrics on the big screen
+
+### Setup
+
+<Steps>
+  <Step title="Install on Android TV">
+    Sideload the Musika APK to your Android TV device
+  </Step>
+  
+  <Step title="Launch from TV home">
+    Find Musika in your apps list or on the leanback launcher
+  </Step>
+  
+  <Step title="Navigate with remote">
+    Use your TV remote's D-pad to navigate the interface
+  </Step>
+</Steps>
+
+<Tip>
+  For best results on Android TV, use a wireless keyboard or mouse for easier text input when searching.
+</Tip>
+
+## Last.fm Scrobbling
+
+Connect your Last.fm account to automatically track your listening history and discover music based on your taste.
+
+### What is Scrobbling?
+
+Scrobbling automatically logs every song you listen to in Musika to your Last.fm profile, helping you:
+
+- Track your listening habits over time
+- Discover similar artists and recommendations
+- Share your music taste with friends
+- Generate personalized statistics
+
+### Features
+
+- **Automatic Scrobbling**: Songs are logged automatically as you listen
+- **Now Playing Updates**: Real-time updates to your Last.fm profile
+- **Configurable Thresholds**: Set when songs should be scrobbled
+  - By percentage of song played
+  - By minutes listened
+  - Minimum track duration for scrobbling
+- **Scrobble Delay**: Customize when scrobbles are submitted
+- **Session Management**: Secure Last.fm authentication
+
+### Setup Last.fm Integration
+
+<Steps>
+  <Step title="Open Settings">
+    Go to **Settings** → **Integrations** → **Last.fm**
+  </Step>
+  
+  <Step title="Login to Last.fm">
+    Tap **Login** and enter your Last.fm credentials
+  </Step>
+  
+  <Step title="Authorize Musika">
+    Approve Musika to access your Last.fm account
+  </Step>
+  
+  <Step title="Configure scrobbling">
+    Adjust scrobble settings:
+    - Set scrobble percentage threshold (default: 50%)
+    - Set minimum duration for scrobbling
+    - Enable/disable Now Playing updates
+  </Step>
+</Steps>
+
+### Scrobbling Settings
+
+**Scrobble Threshold**  
+Set when a song should be scrobbled:
+- **By Percentage**: Scrobble after listening to X% of the song (default: 50%)
+- **By Time**: Scrobble after X minutes of playback
+
+**Minimum Duration**  
+Only scrobble songs longer than a specified duration (prevents short tracks/interludes from being logged)
+
+**Now Playing**  
+Update your Last.fm "Now Playing" status in real-time as songs change
+
+**Scrobble Delay**  
+Wait before submitting scrobbles (useful if you skip songs frequently)
+
+<Info>
+  Last.fm scrobbling requires an active Last.fm account. Create one free at [last.fm](https://www.last.fm).
+</Info>
+
+### Troubleshooting Last.fm
+
+<Accordion title="Songs not scrobbling">
+  If your songs aren't appearing on Last.fm:
+  
+  1. Verify you're logged in to Last.fm in Musika
+  2. Check internet connection (scrobbles require network)
+  3. Ensure songs meet minimum duration threshold
+  4. Check scrobble percentage setting isn't too high
+  5. Review Last.fm service status
+</Accordion>
+
+<Accordion title="Duplicate scrobbles">
+  If songs are scrobbling multiple times:
+  
+  1. Disable scrobbling in other music apps
+  2. Check scrobble delay settings
+  3. Ensure you're not running multiple instances of Musika
+</Accordion>
+
+## Bluetooth Devices
+
+Musika provides enhanced support for Bluetooth audio devices:
+
+### Features
+
+- **AVRCP Support**: Control playback from Bluetooth device buttons
+- **Metadata Display**: Song info shown on compatible car stereos and headphones
+- **Auto-Connect**: Automatically resume playback when connecting to trusted devices
+- **Multiple Devices**: Switch between different Bluetooth devices seamlessly
+
+### Supported Bluetooth Profiles
+
+- **A2DP**: High-quality audio streaming
+- **AVRCP**: Playback control (play, pause, skip, volume)
+- **Bluetooth Low Energy**: For fitness trackers and wearables
+
+<Note>
+  Bluetooth permissions are optional. Grant them for the best experience with wireless devices.
+</Note>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="DLNA Casting" icon="cast" href="/features/dlna-casting">
+    Stream to network devices and speakers
+  </Card>
+  <Card title="Customization" icon="palette" href="/guides/customization">
+    Customize app settings and integrations
+  </Card>
+</CardGroup>

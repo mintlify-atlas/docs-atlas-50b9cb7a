@@ -41,7 +41,10 @@
               "features/lyrics",
               "features/audio-recognition",
               "features/dlna-casting",
-              "features/sleep-timer"
+              "features/sleep-timer",
+              "features/widgets",
+              "features/integrations",
+              "features/statistics"
             ]
           },
           {
