@@ -1,0 +1,95 @@
+{
+  "projectType": "saas",
+  "projectName": "Musika",
+  "projectDescription": "A modern YouTube Music client for Android with ad-free streaming, synced lyrics, offline playback, and advanced music discovery.",
+  "theme": "palm",
+  "primaryColor": "#9c27b0",
+  "lightColor": "#ba68c8",
+  "darkColor": "#7b1fa2",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "setup"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/overview",
+              "features/streaming",
+              "features/offline-playback",
+              "features/playlists",
+              "features/lyrics",
+              "features/audio-recognition",
+              "features/dlna-casting",
+              "features/sleep-timer"
+            ]
+          },
+          {
+            "group": "User Guide",
+            "pages": [
+              "guides/using-musika",
+              "guides/downloading-music",
+              "guides/managing-playlists",
+              "guides/dlna-setup",
+              "guides/customization"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Development",
+        "groups": [
+          {
+            "group": "Contributing",
+            "pages": [
+              "development/contributing",
+              "development/build-instructions",
+              "development/architecture"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/changelog",
+              "reference/roadmap",
+              "reference/security",
+              "reference/privacy-policy"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Ad-free YouTube Music streaming",
+    "Offline downloads with dedicated download manager",
+    "Real-time synchronized lyrics with AI translation",
+    "Audio recognition for song identification",
+    "DLNA/UPnP casting to network devices",
+    "Chromecast support",
+    "Sleep timer with fade out",
+    "Background and lockscreen playback",
+    "Smart recommendations and music discovery",
+    "Material Design 3 UI with dark theme"
+  ],
+  "publicApiSurface": [
+    "MainActivity - Main app entry point",
+    "MusicService - Background playback service (MediaSessionService)",
+    "ExoDownloadService - Download management service",
+    "MusicWidgetProvider - Home screen widget",
+    "FindWidgetProvider - Find widget",
+    "VideoPlayerActivity - Video playback screen",
+    "CastOptionsProvider - Chromecast configuration",
+    "DLNA/UPnP streaming capabilities",
+    "YouTube Music integration via InnerTube API",
+    "Lyrics providers (LRCLIB, Kugou)"
+  ]
+}
